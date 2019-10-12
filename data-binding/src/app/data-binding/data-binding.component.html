@@ -1,18 +1,18 @@
 <section class="property-binding">
-    <!-- <article>
+    <article>
         <h3>Interpolation</h3>
         <p>String rendered with interpolation: {{ url }}</p>
         <p>Result of 1 + 1 is {{ 1 + 1 }}</p>
         <p>Result of 1 + 1 is not {{ 1 + 1 + getValue() }}</p>
         <p>{{ getBooleanValue() && booleanValue }}</p>
     </article>
-
+    <br>
     <article>
         <h3>Property Binding</h3>
         <img src="{{ urlImage }}">
         <img [src]="urlImage">
-    </article> -->
-
+    </article>
+    <br><br>
     <article>
         <h3>Class and Style Binding</h3>
         
@@ -38,6 +38,30 @@
             <div class="alert alert-danger" role="alert" [style.display]="clazz.value == 'alert-danger' ? 'block' : 'none'">
                 This text shows up only when danger option is selected.
             </div>
+        </div>
+    </article>
+</section>
+<br><br>
+<section class="event-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <button (click)="onClickButton()" class="btn btn-primary">Click me!</button>
+            
+            <br><br>
+            
+            <input type="text" 
+                (keyup)="onKeyUp($event)" 
+                (keyup.enter)="saveValue($event.target.value)"
+                (blur)="saveValue($event.target.value)">
+            <p>Current value: {{ currentValue }}</p>
+            <p>Saved value: {{ savedValue }}</p>
+
+            <br><br>
+
+            <span (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highligth]="isMouseOver">Hover over me</span>
         </div>
     </article>
 </section>

@@ -11,6 +11,11 @@ export class DataBindingComponent implements OnInit {
   public urlImage = 'http://lorempixel.com/400/200/nature/';
   public booleanValue = true;
 
+  public currentValue = '';
+  public savedValue = '';
+
+  private isMouseOver = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +27,22 @@ export class DataBindingComponent implements OnInit {
 
   public getBooleanValue() {
     return true;
+  }
+
+  public onClickButton() {
+    alert('Yeeey!');
+  }
+
+  public onKeyUp(event: KeyboardEvent) {
+    this.currentValue = (event.target as HTMLInputElement).value;
+  }
+
+  public saveValue(value: string) {
+    this.savedValue = value;
+  }
+
+  public onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver;
   }
 
 }
