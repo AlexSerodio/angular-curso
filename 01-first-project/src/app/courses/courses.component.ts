@@ -9,7 +9,7 @@ import { CoursesService } from './courses.service';
 export class CoursesComponent implements OnInit {
 
   public portalName: string;
-  public courses: string[]
+  public courses: string[];
 
   constructor(private coursesService: CoursesService) {
     this.portalName = 'http:/loiane.training';

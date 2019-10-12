@@ -1,0 +1,43 @@
+<section class="property-binding">
+    <!-- <article>
+        <h3>Interpolation</h3>
+        <p>String rendered with interpolation: {{ url }}</p>
+        <p>Result of 1 + 1 is {{ 1 + 1 }}</p>
+        <p>Result of 1 + 1 is not {{ 1 + 1 + getValue() }}</p>
+        <p>{{ getBooleanValue() && booleanValue }}</p>
+    </article>
+
+    <article>
+        <h3>Property Binding</h3>
+        <img src="{{ urlImage }}">
+        <img [src]="urlImage">
+    </article> -->
+
+    <article>
+        <h3>Class and Style Binding</h3>
+        
+        <div class="alert {{ clazz.value }}" role="alert">
+            Text colored according to combobox.
+        </div>
+
+        <div>
+            Select a class:
+            <select #clazz (change)="0">
+                <option value="alert-success">Success</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Warning</option>
+                <option value="alert-danger">Error</option>
+            </select>
+            <br><br>
+
+            <div class="alert alert-success" role="alert" [class.alert-success]="clazz.value == 'alert-success'">Success</div>
+            <div class="alert alert-info" role="alert" [class.alert-info]="clazz.value == 'alert-info'">Info</div>
+            <div class="alert alert-warning" role="alert" [class.alert-warning]="clazz.value == 'alert-warning'">Warning</div>
+            <div class="alert alert-danger" role="alert" [class.alert-danger]="clazz.value == 'alert-danger'">Error</div>
+
+            <div class="alert alert-danger" role="alert" [style.display]="clazz.value == 'alert-danger' ? 'block' : 'none'">
+                This text shows up only when danger option is selected.
+            </div>
+        </div>
+    </article>
+</section>
