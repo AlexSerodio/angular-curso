@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div *ngIf="playing; else endGame">
+  <app-panel (finishGame)="finishGame($event)"></app-panel>
+</div>
+
+<ng-template #endGame>
+  <div class="container" style="margin-top: 50px; text-align: center;">
+    <div class="row">
+      <div class="col">
+        <h3>{{ finalMessage }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="restartGame()">Jogar novamente</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

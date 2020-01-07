@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-6">
+        <app-progress [progressPercentage]="progress"></app-progress>
+      </div>
+      <div class="col-sm-6">
+        <div class="d-flex justify-content-end">
+          <app-attempts [attemptsCount]="attempts"></app-attempts>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h6><b>{{ instruction }}</b></h6>
+        <p>{{ roundPhrase.originalSentence }}</p>
+
+        <div class="form-group">
+          <textarea class="form-control" rows="3" (input)="updateAnswer($event)" [value]="answer"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" (click)="verifyAnswer()">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
